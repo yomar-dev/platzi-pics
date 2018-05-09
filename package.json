@@ -1,0 +1,19 @@
+{
+  "name": "platzi-pics",
+  "version": "1.0.0",
+  "description": "Aplicación del curso de Electron en Platzi.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yomar-dev/platzi-pics.git"
+  },
+  "author": "Yomar Miranda <mirandayomar@gmail.com> (https://gitlab.com/yomar_dev)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yomar-dev/platzi-pics/issues"
+  },
+  "homepage": "https://github.com/yomar-dev/platzi-pics#readme"
+}
