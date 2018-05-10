@@ -2,22 +2,40 @@
 
 /**
  * Objeto 'app'.
+ * El objeto 'BrowserWindow' es quien nos permite cargar todo el contenido
+ * visual de la aplicación de escritorio.
  */
-const { app } = require('electron')
-
-/**
- * Ver todas las propiedades del objeto 'app'.
- */
-console.dir(app)
+const { app, BrowserWindow } = require('electron')
 
 /**
  * 'before-quit': Es un evento que se ejecuta antes de cerrar la aplicación.
  */
-app.on('before-quit', () =>{
+app.on('before-quit', () => {
 	console.log('Saliendo de la aplicacion')
 })
 
 /**
- * Salir de la aplicación.
+ * Para poder mostrar una ventana tenemos que esperar la aplicación
+ * este lista y para eso utilizamos el evento 'ready'.
  */
-app.quit();
+app.on('ready', () => {
+	/**
+	 * Crear una ventana básica.
+	 */
+	let win = new BrowserWindow()
+
+	/**
+	 * Evento que se dispara cuando la ventana sea cerrada.
+	 */
+	win.on('closed', () => {
+		/**
+		 * Eliminar el objeto 'win' de la memoria.
+		 */
+		win = null
+		
+		/**
+		 * Salir de la aplicación.
+		 */
+		app.quit();
+	})
+})
