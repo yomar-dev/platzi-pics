@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/yomar-dev/platzi-pics/issues"
   },
-  "homepage": "https://github.com/yomar-dev/platzi-pics#readme"
+  "homepage": "https://github.com/yomar-dev/platzi-pics#readme",
+  "dependencies": {
+    "electron": "^2.0.0"
+  }
 }
