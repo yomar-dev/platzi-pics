@@ -31,6 +31,14 @@ app.on('ready', () => {
 	})
 
 	/**
+	 * Evento que se ejecuta al mover la ventana.
+	 */
+	win.on('move', () => {
+		const position = win.getPosition()
+		console.log(`La posición de la ventana es: ${position}`)
+	})
+
+	/**
 	 * Evento que se dispara cuando la ventana sea cerrada.
 	 */
 	win.on('closed', () => {
