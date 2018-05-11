@@ -27,7 +27,7 @@ app.on('ready', () => {
 		height: 600,
 		title: "Hola Mundo!!",
 		center: true,
-		maximizable: false,
+		maximizable: true,
 		show: false // Ocultar al iniciar la aplicación.
 	})
 
