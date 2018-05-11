@@ -43,14 +43,6 @@ app.on('ready', () => {
 	})
 
 	/**
-	 * Evento que se ejecuta al mover la ventana.
-	 */
-	win.on('move', () => {
-		const position = win.getPosition()
-		console.log(`La posición de la ventana es: ${position}`)
-	})
-
-	/**
 	 * Evento que se dispara cuando la ventana sea cerrada.
 	 */
 	win.on('closed', () => {
@@ -66,7 +58,7 @@ app.on('ready', () => {
 	})
 
 	/**
-	 * Cargar URL externa.
+	 * Cargar archivo local.
 	 */
-	win.loadURL('http://devdocs.io/')
+	win.loadURL(`file://${__dirname}/index.html`)
 })
