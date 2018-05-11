@@ -27,7 +27,19 @@ app.on('ready', () => {
 		height: 600,
 		title: "Hola Mundo!!",
 		center: true,
-		maximizable: false
+		maximizable: false,
+		show: false // Ocultar al iniciar la aplicación.
+	})
+
+	/**
+	 * En 'once' los eventos se ejecutan una única vez.
+	 * En 'on' los eventos se ejecutan multiples veces.
+	 */
+	win.once('ready-to-show', () => {
+		/**
+		 * Mostrar la ventana cuando se haya descargado todo el contenido de internet.
+		 */
+		win.show()
 	})
 
 	/**
@@ -52,4 +64,9 @@ app.on('ready', () => {
 		 */
 		app.quit();
 	})
+
+	/**
+	 * Cargar URL externa.
+	 */
+	win.loadURL('http://devdocs.io/')
 })
