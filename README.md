@@ -37,4 +37,5 @@ app.on('before-quit', () =>{
 app.quit();
 ~~~
 
-[Documentación oficial de Electron](https://electronjs.org/docs)
+[Documentación oficial de Electron](https://electronjs.org/docs) <br>
+[Documentación de muchas APIS](http://devdocs.io/)
