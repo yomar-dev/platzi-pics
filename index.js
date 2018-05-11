@@ -22,7 +22,13 @@ app.on('ready', () => {
 	/**
 	 * Crear una ventana básica.
 	 */
-	let win = new BrowserWindow()
+	let win = new BrowserWindow({
+		width: 800,
+		height: 600,
+		title: "Hola Mundo!!",
+		center: true,
+		maximizable: false
+	})
 
 	/**
 	 * Evento que se dispara cuando la ventana sea cerrada.
