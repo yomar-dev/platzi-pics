@@ -6,6 +6,7 @@
  * visual de la aplicación de escritorio.
  */
 import { app, BrowserWindow } from 'electron'
+import devtools from './devtools.js'
 
 /**
  * 'before-quit': Es un evento que se ejecuta antes de cerrar la aplicación.
