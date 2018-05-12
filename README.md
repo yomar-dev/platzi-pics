@@ -37,5 +37,16 @@ app.on('before-quit', () =>{
 app.quit();
 ~~~
 
+<br><br>
+
+### Notas ###
+Para poder utilizar `electron-compile`, primero debemos desinstalar la anterior versión de `electron` y luego instalar `electron-compile` para evitar conflictos en nuestra aplicación.
+
+**Desinstalar Electron:** `npm remove electron --save` <br>
+**Instalar Electron Compile:** `npm install --save electron-compile` <br>
+
+<br><br>
+
 [Documentación oficial de Electron](https://electronjs.org/docs) <br>
-[Documentación de muchas APIS](http://devdocs.io/)
+[Documentación de muchas APIS](http://devdocs.io/) <br>
+[Electron Compile](https://github.com/electron-userland/electron-compile)
