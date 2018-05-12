@@ -9,6 +9,14 @@ import { app, BrowserWindow } from 'electron'
 import devtools from './devtools'
 
 /**
+ * devtools() sólo se va a ejecutar si nos encontramos
+ * en el ambiente de desarrollo.
+ */
+if(process.env.NODE_ENV === 'development'){
+	devtools()
+}
+
+/**
  * 'before-quit': Es un evento que se ejecuta antes de cerrar la aplicación.
  */
 app.on('before-quit', () => {
