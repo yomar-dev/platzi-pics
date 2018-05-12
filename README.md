@@ -47,6 +47,8 @@ Para poder utilizar `electron-compile`, primero debemos desinstalar la anterior 
 
 > Cabe destacar que `electron-compile` me permite utilizar la sintaxis **ES6** y lo transpila con **Babel** y devuelve código **Javascript** normal.
 
+**Cross Env:** Esta herramienta permite configurar variables de entorno para funcione de igual manera tanto en *Windows* como *Linux* y *Mac*, para instalarla se hace de la siguiente manera: `npm install cross-env --save`.
+
 <br><br>
 
 [Documentación oficial de Electron](https://electronjs.org/docs) <br>
