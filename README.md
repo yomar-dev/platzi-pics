@@ -45,6 +45,8 @@ Para poder utilizar `electron-compile`, primero debemos desinstalar la anterior 
 **Desinstalar Electron:** `npm remove electron --save` <br>
 **Instalar Electron Compile:** `npm install --save electron-compile` <br>
 
+> Cabe destacar que `electron-compile` me permite utilizar la sintaxis **ES6** y lo transpila con **Babel** y devuelve código **Javascript** normal.
+
 <br><br>
 
 [Documentación oficial de Electron](https://electronjs.org/docs) <br>
