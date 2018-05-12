@@ -5,7 +5,7 @@
  * El objeto 'BrowserWindow' es quien nos permite cargar todo el contenido
  * visual de la aplicación de escritorio.
  */
-const { app, BrowserWindow } = require('electron')
+import { app, BrowserWindow } from 'electron'
 
 /**
  * 'before-quit': Es un evento que se ejecuta antes de cerrar la aplicación.
