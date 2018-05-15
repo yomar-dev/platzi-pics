@@ -49,8 +49,11 @@ Para poder utilizar `electron-compile`, primero debemos desinstalar la anterior 
 
 **Cross Env:** Esta herramienta permite configurar variables de entorno para funcione de igual manera tanto en *Windows* como *Linux* y *Mac*, para instalarla se hace de la siguiente manera: `npm install cross-env --save`.
 
+**Standard:** Herramienta de verificación de código.
+
 <br><br>
 
 [Documentación oficial de Electron](https://electronjs.org/docs) <br>
 [Documentación de muchas APIS](http://devdocs.io/) <br>
-[Electron Compile](https://github.com/electron-userland/electron-compile)
+[Electron Compile](https://github.com/electron-userland/electron-compile) <br>
+[Standard](https://www.npmjs.com/package/standard)
