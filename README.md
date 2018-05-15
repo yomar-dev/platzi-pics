@@ -51,9 +51,14 @@ Para poder utilizar `electron-compile`, primero debemos desinstalar la anterior 
 
 **Standard:** Herramienta de verificación de código.
 
+**Electron Debug (DevTools):** Herramientas de desarrollo (Sólo se activa en un ambiente de desarrollo) <br>
+Instalación: `npm i electron-debug -S`. <br>
+Ejecución: `CTRL+SHIFT+I`. <br>
+
 <br><br>
 
 [Documentación oficial de Electron](https://electronjs.org/docs) <br>
 [Documentación de muchas APIS](http://devdocs.io/) <br>
 [Electron Compile](https://github.com/electron-userland/electron-compile) <br>
-[Standard](https://www.npmjs.com/package/standard)
+[Standard](https://www.npmjs.com/package/standard) <br>
+[Electron Debug](https://www.npmjs.com/package/electron-debug) <br>
