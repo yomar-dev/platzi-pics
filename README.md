@@ -55,6 +55,10 @@ Para poder utilizar `electron-compile`, primero debemos desinstalar la anterior 
 Instalación: `npm i electron-debug -S`. <br>
 Ejecución: `CTRL+SHIFT+I`. <br>
 
+**DevTron:** Esta herramienta se debe instalar luego de haber instalado *Electron Debug*, y me permite hacer debug de aplicaciones dependiendo con que tecnología esté trabajando, por ejemplo: *ReactJS*, *Angular*, etc. <br>
+Instalación: `npm install --save-dev devtron`. <br>
+Para poder ver la pestaña de **DevTron** hay que ejecutar el siguiente comando en la consola de la aplicación (navegador) `require('devtron').install()`.
+
 <br><br>
 
 [Documentación oficial de Electron](https://electronjs.org/docs) <br>
