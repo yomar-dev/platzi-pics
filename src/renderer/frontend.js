@@ -39,6 +39,12 @@ function searchImagesEvent(){
 					thumbs[i].parentNode.classList.add('hidden');					
 				}
 			}
+			selectFirstImage();
 		}
 	})
+}
+
+function selectFirstImage(){
+	const image = document.querySelector('li.list-group-item:not(.hidden)');
+	changeImage(image);
 }
