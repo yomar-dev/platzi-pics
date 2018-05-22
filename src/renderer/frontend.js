@@ -40,6 +40,11 @@ function searchImagesEvent(){
 				}
 			}
 			selectFirstImage();
+		}else{
+			const hidden = document.querySelectorAll('li.hidden');
+			for (var i = 0; i < hidden.length; i++) {
+				hidden[i].classList.remove('hidden');
+			}
 		}
 	})
 }
