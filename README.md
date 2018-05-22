@@ -67,3 +67,5 @@ Para poder ver la pestaña de **DevTron** hay que ejecutar el siguiente comando 
 [Standard](https://www.npmjs.com/package/standard) <br>
 [Electron Debug](https://www.npmjs.com/package/electron-debug) <br>
 [Photon CSS - Cambiar Look and feel](http://photonkit.com/) <br>
+[Filterous - NPM](https://www.npmjs.com/package/filterous) <br>
+[Filteruos - GitHub](https://github.com/girliemac/filterous-2/releases) <br>

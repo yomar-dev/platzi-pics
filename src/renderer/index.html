@@ -6,6 +6,7 @@
 	<title>Platzi Pics</title>
 	<link rel="stylesheet" href="../assets/css/photon.min.css">
 	<link rel="stylesheet" href="../assets/css/main.css">
+	<script src="lib/filterous2-2.0.0.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="frontend.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body>
@@ -15,7 +16,7 @@
 	 			<div class="pane pane-sm sidebar">
 	 				<ul class="list-group">
 					  	<li class="list-group-header">
-					    	<input id="search-box" class="form-control" type="text" placeholder="Search for someone">
+					    	<input id="search-box" class="form-control" type="text" placeholder="Buscar imagen">
 					  	</li>
 					  	<li class="list-group-item selected">
 					    	<img class="media-object pull-left" src="../assets/img/1.jpg" height="32">
@@ -65,8 +66,47 @@
 			 					</div>			 					
 			 					<button class="btn btn-default pull-right">Guardar</button>
 		 						<select id="filters" class="pull-right">
-		 							<option value="none">Ninguno</option>
-		 							<option value="sepia">Sepia</option>
+		 							<option value="normal" selected>Normal</option>
+				                  	<option value="1977">1977</option>
+				                   	<option value="aden">Aden</option>
+				                   	<option value="amaro">Amaro</option>
+				                   	<option value="ashby">Ashby</option>
+				                   	<option value="brannan">Brannan</option>
+				                   	<option value="brooklyn">Brooklyn</option>
+				                   	<option value="charmes">Charmes</option>
+				                   	<option value="clarendon">Clarendon</option>
+				                   	<option value="crema">Crema</option>
+				                   	<option value="dogpatch">Dogpatch</option>
+				                   	<option value="earlybird">Earlybird</option>
+				                   	<option value="gingham">Gingham</option>
+				                   	<option value="ginza">Ginza</option>
+				                   	<option value="hefe">Hefe</option>
+				                   	<option value="helena">Helena</option>
+				                   	<option value="hudson">Hudson</option>
+				                   	<option value="inkwell">Inkwell</option>
+				                   	<option value="juno">Juno</option>
+				                   	<option value="kelvin">Kelvin</option>
+				                   	<option value="lark">Lark</option>
+				                   	<option value="lofi">Lofi</option>
+				                   	<option value="ludwig">Ludwig</option>
+				                   	<option value="maven">Maven</option>
+				                   	<option value="mayfair">Mayfair</option>
+				                   	<option value="moon">Moon</option>
+				                   	<option value="nashville">Nashville</option>
+				                   	<option value="perpetua">Perpetua</option>
+				                   	<option value="reyes">Reyes</option>
+				                   	<option value="rise">Rise</option>
+				                   	<option value="sierra">Sierra</option>
+				                   	<option value="skyline">Skyline</option>
+				                   	<option value="slumber">Slumber</option>
+				                   	<option value="stinson">Stinson</option>
+				                   	<option value="sutro">Sutro</option>
+				                   	<option value="toaster">Toaster</option>
+				                   	<option value="valencia">Valencia</option>
+				                   	<option value="vesper">Vesper</option>
+				                   	<option value="walden">Walden</option>
+				                   	<option value="willow">Willow</option>
+				                   	<option value="xpro2">Xpro2</option>
 		 						</select>
 		 						<label for="filters" class="pull-right filter-label">Filtros: </label>			 					
 			 				</div>
