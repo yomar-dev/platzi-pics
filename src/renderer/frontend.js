@@ -1,11 +1,14 @@
 import url from 'url'
 import path from 'path'
 import applyFilter from './filters'
+import { setIpc, sendIpc } from './IpcRendererEvents'
 
 window.addEventListener('load', () => {
+	setIpc();
 	addImagesEvents();
 	searchImagesEvent();
 	selectEvent();
+	openDirectory();
 });
 
 function addImagesEvents(){
@@ -66,5 +69,12 @@ function selectEvent(){
 	select.addEventListener('change', function(){
 		let image = document.getElementById('image-displayed');
 		applyFilter(this.value, image);
+	});
+}
+
+function openDirectory(){
+	const openDirectory = document.getElementById('open-directory');
+	openDirectory.addEventListener('click', () => {
+		sendIpc();
 	});
 }

@@ -5,7 +5,7 @@
  * El objeto 'BrowserWindow' es quien nos permite cargar todo el contenido
  * visual de la aplicación de escritorio.
  */
-import { app, BrowserWindow } from 'electron'
+import { app, BrowserWindow, ipcMain } from 'electron'
 import devtools from './devtools'
 
 /**
@@ -71,3 +71,8 @@ app.on('ready', () => {
 	 */
 	win.loadURL(`file://${__dirname}/renderer/index.html`)
 })
+
+ipcMain.on('ping', (event, arg) => {
+	console.log(`Ping recibido - ${arg}`);
+	event.sender.send('pong', new Date());
+});
