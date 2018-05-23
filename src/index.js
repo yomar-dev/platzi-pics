@@ -7,6 +7,7 @@
  */
 import { app, BrowserWindow, ipcMain, dialog } from 'electron'
 import devtools from './devtools'
+import fs from 'fs'
 
 let win;
 
@@ -87,9 +88,13 @@ ipcMain.on('open-directory', (event) => {
 		properties: ['openDirectory']
 	},
 	(dir) =>{
-		/**
-		 * Imprimir el directorio seleccionado.
-		 */
-		console.log(dir);
+		if(dir){
+			/**
+			 * Leer el directorio seleccionado
+			 */
+			fs.readdir(dir[0], (err, files) => {
+				console.log(files);
+			})
+		}
 	});
 });
