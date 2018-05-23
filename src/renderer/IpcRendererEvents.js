@@ -13,8 +13,8 @@ function setIpc(){
 /**
  * Enviar un evento
  */
-function sendIpc(){
-	ipcRenderer.send('ping', new Date());
+function openDirectory(){
+	ipcRenderer.send('open-directory');
 }
 
 module.exports = {
