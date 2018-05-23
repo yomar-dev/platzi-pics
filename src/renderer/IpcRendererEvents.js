@@ -19,5 +19,5 @@ function openDirectory(){
 
 module.exports = {
 	setIpc,
-	sendIpc
+	openDirectory
 }

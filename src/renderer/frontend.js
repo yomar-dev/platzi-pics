@@ -8,7 +8,6 @@ window.addEventListener('load', () => {
 	addImagesEvents();
 	searchImagesEvent();
 	selectEvent();
-	openDirectory();
 	buttonEvent('open-directory', openDirectory)
 });
 
@@ -73,7 +72,7 @@ function selectEvent(){
 	});
 }
 
-function buttonEventid(id, func){
+function buttonEvent(id, func){
 	const openDirectory = document.getElementById(id);
 	openDirectory.addEventListener('click', func);
 }

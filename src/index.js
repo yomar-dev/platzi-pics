@@ -5,8 +5,10 @@
  * El objeto 'BrowserWindow' es quien nos permite cargar todo el contenido
  * visual de la aplicación de escritorio.
  */
-import { app, BrowserWindow, ipcMain } from 'electron'
+import { app, BrowserWindow, ipcMain, dialog } from 'electron'
 import devtools from './devtools'
+
+let win;
 
 /**
  * devtools() sólo se va a ejecutar si nos encontramos
@@ -31,7 +33,7 @@ app.on('ready', () => {
 	/**
 	 * Crear una ventana básica.
 	 */
-	let win = new BrowserWindow({
+	win = new BrowserWindow({
 		width: 800,
 		height: 600,
 		title: "Hola Mundo!!",
@@ -72,7 +74,22 @@ app.on('ready', () => {
 	win.loadURL(`file://${__dirname}/renderer/index.html`)
 })
 
-ipcMain.on('ping', (event, arg) => {
-	console.log(`Ping recibido - ${arg}`);
-	event.sender.send('pong', new Date());
+/**
+ * Recibir evento
+ */
+ipcMain.on('open-directory', (event) => {
+	/**
+	 * Configuración de la ventana de dialogo.
+	 */
+	dialog.showOpenDialog(win, {
+		title: 'Seleccione la nueva ubicación',
+		buttonLabel: 'Abrir ubicación',
+		properties: ['openDirectory']
+	},
+	(dir) =>{
+		/**
+		 * Imprimir el directorio seleccionado.
+		 */
+		console.log(dir);
+	});
 });
