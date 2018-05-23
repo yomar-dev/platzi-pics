@@ -7,6 +7,7 @@
  */
 import { app, BrowserWindow, ipcMain, dialog } from 'electron'
 import devtools from './devtools'
+import isImage from 'is-image'
 import fs from 'fs'
 
 let win;
@@ -88,13 +89,20 @@ ipcMain.on('open-directory', (event) => {
 		properties: ['openDirectory']
 	},
 	(dir) =>{
+		let images = [];
 		if(dir){
 			/**
 			 * Leer el directorio seleccionado
 			 */
 			fs.readdir(dir[0], (err, files) => {
-				console.log(files);
+				let lengthFiles = files.length;
+				for (var i = 0; i < lengthFiles; i++) {
+					if(isImage(files[i])){
+						images.push(files[i]);
+					}
+				}
 			})
+			console.log(images);
 		}
 	});
 });
