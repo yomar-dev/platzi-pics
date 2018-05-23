@@ -8,7 +8,9 @@
 import { app, BrowserWindow, ipcMain, dialog } from 'electron'
 import devtools from './devtools'
 import isImage from 'is-image'
+import filesize from 'filesize'
 import fs from 'fs'
+import path from 'path'
 
 let win;
 
@@ -96,13 +98,28 @@ ipcMain.on('open-directory', (event) => {
 			 */
 			fs.readdir(dir[0], (err, files) => {
 				let lengthFiles = files.length;
-				for (var i = 0; i < lengthFiles; i++) {
+				for (let i = 0; i < lengthFiles; i++) {
 					if(isImage(files[i])){
-						images.push(files[i]);
+						/**
+						 * Obtener la ruta completa de la imagen.
+						 */
+						let imageFile = path.join(dir[0], files[i]);
+						/**
+						 * Obtener información del archivo
+						 */
+						let stats = fs.statSync(imageFile);
+						let size = filesize(stats.size, {round: 0});
+						images.push(
+							{
+								filename: files[i],
+								src: `file://${imageFile}`,
+								size: size
+							}
+						);
 					}
 				}
+				console.log(images);
 			})
-			console.log(images);
 		}
 	});
 });
