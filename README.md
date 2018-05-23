@@ -57,7 +57,13 @@ Ejecución: `CTRL+SHIFT+I`. <br>
 
 **DevTron:** Esta herramienta se debe instalar luego de haber instalado *Electron Debug*, y me permite hacer debug de aplicaciones dependiendo con que tecnología esté trabajando, por ejemplo: *ReactJS*, *Angular*, etc. <br>
 Instalación: `npm install --save-dev devtron`. <br>
-Para poder ver la pestaña de **DevTron** hay que ejecutar el siguiente comando en la consola de la aplicación (navegador) `require('devtron').install()`.
+Para poder ver la pestaña de **DevTron** hay que ejecutar el siguiente comando en la consola de la aplicación (navegador) `require('devtron').install()`. <br>
+
+**Is Image:** Módulo para comprobar si un archivo seleccionado es una imagen. <br>
+Instalación: `npm install --save is-image`. <br>
+
+**File Size:**  Módulo para verificar y mostrar el tamaño del archivo en un formato entendible para humanos (1MB, 1GB, etc). <br>
+Instalación: `npm install --save filesize`.<br>
 
 <br><br>
 
