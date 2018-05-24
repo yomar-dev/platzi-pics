@@ -9,6 +9,7 @@ function setIpc(){
 		clearImages();
 		loadImages(images);
 		addImagesEvents();
+		selectFirstImage();
 	});
 }
 
@@ -67,6 +68,11 @@ function changeImage(node){
 	}else{
 		document.getElementById('image-displayed').src = '';
 	}
+}
+
+function selectFirstImage(){
+	const image = document.querySelector('li.list-group-item:not(.hidden)');
+	changeImage(image);
 }
 
 module.exports = {
