@@ -8,6 +8,7 @@ function setIpc(){
 	ipcRenderer.on('load-images', (event, images) => {
 		clearImages();
 		loadImages(images);
+		addImagesEvents();
 	});
 }
 
@@ -42,6 +43,29 @@ function loadImages(images){
 				    	</div>
 				  	</li>`;
 		imagesList.insertAdjacentHTML('beforeend', node);
+	}
+}
+
+function addImagesEvents(){
+	const thumbs = document.querySelectorAll('li.list-group-item');
+	const lengthThumbs = thumbs.length;
+	for (var i = 0; i < lengthThumbs; i++) {
+		thumbs[i].addEventListener('click', function (){
+			changeImage(this);
+		});
+	}
+}
+
+function changeImage(node){
+	if(node){
+		const selected = document.querySelector('li.selected');
+		if(selected){
+			selected.classList.remove('selected');
+		}
+		node.classList.add('selected');
+		document.getElementById('image-displayed').src = node.querySelector('img').src;
+	}else{
+		document.getElementById('image-displayed').src = '';
 	}
 }
 
