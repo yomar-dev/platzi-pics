@@ -5,8 +5,8 @@ import { ipcRenderer } from 'electron'
  * a escuchar en el lado del proceso de renderizado.
  */
 function setIpc(){
-	ipcRenderer.on('pong', (event, arg) => {
-		console.log(`Pong recibido ${arg}`);
+	ipcRenderer.on('load-images', (event, images) => {
+		console.log(images);
 	});
 }
 

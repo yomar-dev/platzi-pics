@@ -97,6 +97,8 @@ ipcMain.on('open-directory', (event) => {
 			 * Leer el directorio seleccionado
 			 */
 			fs.readdir(dir[0], (err, files) => {
+				if(err) throw err
+
 				let lengthFiles = files.length;
 				for (let i = 0; i < lengthFiles; i++) {
 					if(isImage(files[i])){
@@ -118,7 +120,10 @@ ipcMain.on('open-directory', (event) => {
 						);
 					}
 				}
-				console.log(images);
+				/**
+				 * Evento al cual lo voy a enviar 'load-images'
+				 */
+				event.sender.send('load-images', images);
 			})
 		}
 	});
