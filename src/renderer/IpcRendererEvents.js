@@ -13,6 +13,10 @@ function setIpc(){
 		addImagesEvents();
 		selectFirstImage();
 	});
+
+	ipcRenderer.on('save-image', (event, file) => {
+		console.log(file);
+	});
 }
 
 /**

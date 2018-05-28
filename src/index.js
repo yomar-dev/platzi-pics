@@ -135,6 +135,8 @@ ipcMain.on('open-save-dialog', (event, ext) => {
 		buttonLabel: 'Guardar imagen',
 		filters: [{name: 'Images', extensions: [ext.substr(1)]}]
 	}, (file) => {
-		console.log(file)
+		if(file){
+			event.sender.send('save-image', file)
+		}
 	})
 })
