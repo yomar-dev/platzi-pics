@@ -129,11 +129,11 @@ ipcMain.on('open-directory', (event) => {
 	});
 });
 
-ipcMain.on('open-save-dialog', (event) => {
+ipcMain.on('open-save-dialog', (event, ext) => {
 	dialog.showSaveDialog(win, {
 		title: 'Guardar imagen modificada',
 		buttonLabel: 'Guardar imagen',
-		filters: []
+		filters: [{name: 'Images', extensions: [ext.substr(1)]}]
 	}, (file) => {
 		console.log(file)
 	})

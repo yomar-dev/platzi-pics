@@ -1,5 +1,6 @@
 import { ipcRenderer } from 'electron'
 import { addImagesEvents, changeImage, selectFirstImage, clearImages, loadImages } from './images-ui'
+import path from 'path'
 
 /**
  * Permite configurar todos los eventos que se van
@@ -25,7 +26,13 @@ function openDirectory(){
  * Guardar imagen
  */
 function saveFile(){
-	ipcRenderer.send('open-save-dialog');
+	/**
+	 * Obtener la extensión de la imagen original
+	 */
+	const image = document.getElementById('image-displayed').dataset.original;
+	const ext = path.extname(image);
+
+	ipcRenderer.send('open-save-dialog', ext);
 }
 
 module.exports = {
