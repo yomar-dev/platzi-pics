@@ -21,7 +21,15 @@ function openDirectory(){
 	ipcRenderer.send('open-directory');
 }
 
+/**
+ * Guardar imagen
+ */
+function saveFile(){
+	ipcRenderer.send('open-save-dialog');
+}
+
 module.exports = {
 	setIpc,
+	saveFile,
 	openDirectory
 }
