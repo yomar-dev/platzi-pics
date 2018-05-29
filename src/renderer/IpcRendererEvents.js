@@ -1,5 +1,6 @@
 import { ipcRenderer } from 'electron'
 import { addImagesEvents, changeImage, selectFirstImage, clearImages, loadImages } from './images-ui'
+import { saveImage } from './filters'
 import path from 'path'
 
 /**
@@ -15,7 +16,7 @@ function setIpc(){
 	});
 
 	ipcRenderer.on('save-image', (event, file) => {
-		console.log(file);
+		saveImage(file)
 	});
 }
 
