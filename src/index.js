@@ -7,6 +7,7 @@
  */
 import { app, BrowserWindow, ipcMain, dialog } from 'electron'
 import devtools from './devtools'
+import setupErrors from './handle-errors'
 import isImage from 'is-image'
 import filesize from 'filesize'
 import fs from 'fs'
@@ -45,6 +46,8 @@ app.on('ready', () => {
 		maximizable: true,
 		show: false // Ocultar al iniciar la aplicación.
 	})
+
+	setupErrors(win)
 
 	/**
 	 * En 'once' los eventos se ejecutan una única vez.
