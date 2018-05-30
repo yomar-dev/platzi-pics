@@ -16,7 +16,11 @@ function setIpc(){
 	});
 
 	ipcRenderer.on('save-image', (event, file) => {
-		saveImage(file)
+		saveImage(file, (err) => {
+			if(err)	return showDialog('error', 'Platzipics', err.message)
+
+			showDialog('info', 'Platzipics', 'Imagen guardada')
+		})
 	});
 }
 
