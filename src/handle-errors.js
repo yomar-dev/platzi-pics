@@ -15,6 +15,14 @@ function setupErrors(win){
 	win.webContents.on('crashed', () => {
 		relaunchApp(win)
 	})
+
+	win.on('unresponsive', () => {
+		dialog.showMessageBox(win, {
+			type: 'warning',
+			title: 'Platzipics',
+			message: 'La aplicación no responde, por favor espere un momento.'
+		})
+	})
 }
 
 module.exports = setupErrors
