@@ -23,6 +23,10 @@ function setupErrors(win){
 			message: 'La aplicación no responde, por favor espere un momento.'
 		})
 	})
+
+	process.on('uncaughtException', () => {
+		relaunchApp(win)
+	})
 }
 
 module.exports = setupErrors
