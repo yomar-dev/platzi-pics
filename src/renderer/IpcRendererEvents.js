@@ -40,6 +40,13 @@ function saveFile(){
 	ipcRenderer.send('open-save-dialog', ext);
 }
 
+/**
+ * Mostrar ventana de dialogo
+ */
+function showDialog(type, title, message){
+	ipcRenderer.send('show-dialog', { type: type, title: title, message: message });
+}
+
 module.exports = {
 	setIpc,
 	saveFile,
