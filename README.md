@@ -62,8 +62,11 @@ Para poder ver la pestaña de **DevTron** hay que ejecutar el siguiente comando 
 **Is Image:** Módulo para comprobar si un archivo seleccionado es una imagen. <br>
 Instalación: `npm install --save is-image`. <br>
 
-**File Size:**  Módulo para verificar y mostrar el tamaño del archivo en un formato entendible para humanos (1MB, 1GB, etc). <br>
+**File Size:** Módulo para verificar y mostrar el tamaño del archivo en un formato entendible para humanos (1MB, 1GB, etc). <br>
 Instalación: `npm install --save filesize`.<br>
+
+**FS Extra:** Incluir módulos que no están incluidos de manera nativa por **fs**. <br>
+Instalación: `npm install --save fs.extra`.<br>
 
 <br><br>
 
