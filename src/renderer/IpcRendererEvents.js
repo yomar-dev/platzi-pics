@@ -1,4 +1,4 @@
-import { ipcRenderer } from 'electron'
+import { ipcRenderer, remote } from 'electron'
 import { addImagesEvents, changeImage, selectFirstImage, clearImages, loadImages } from './images-ui'
 import { saveImage } from './filters'
 import path from 'path'
@@ -51,8 +51,24 @@ function showDialog(type, title, message){
 	ipcRenderer.send('show-dialog', { type: type, title: title, message: message });
 }
 
+function openPreferences(){
+	const BrowserWindow = remote.BrowserWindow;
+	const preferencesWindow = new BrowserWindow({
+		width: 400,
+		height: 300,
+		title: 'Preferencias',
+		center: true,
+		modal: true,
+		frame: true,
+		show: false
+	});
+
+	preferencesWindow.show();
+}
+
 module.exports = {
 	setIpc,
 	saveFile,
-	openDirectory
+	openDirectory,
+	openPreferences
 }
