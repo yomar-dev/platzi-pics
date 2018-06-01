@@ -9,7 +9,8 @@ import { app, BrowserWindow } from 'electron'
 import devtools from './devtools'
 import setupErrors from './handle-errors'
 import setMainIpc from './ipcMainEvents'
-let win;
+
+global.win;
 
 /**
  * devtools() sólo se va a ejecutar si nos encontramos
@@ -34,7 +35,7 @@ app.on('ready', () => {
 	/**
 	 * Crear una ventana básica.
 	 */
-	win = new BrowserWindow({
+	global.win = new BrowserWindow({
 		width: 800,
 		height: 600,
 		title: "Hola Mundo!!",
@@ -43,28 +44,28 @@ app.on('ready', () => {
 		show: false // Ocultar al iniciar la aplicación.
 	})
 
-	setMainIpc(win)
-	setupErrors(win)
+	setMainIpc(global.win)
+	setupErrors(global.win)
 
 	/**
 	 * En 'once' los eventos se ejecutan una única vez.
 	 * En 'on' los eventos se ejecutan multiples veces.
 	 */
-	win.once('ready-to-show', () => {
+	global.win.once('ready-to-show', () => {
 		/**
 		 * Mostrar la ventana cuando se haya descargado todo el contenido de internet.
 		 */
-		win.show()
+		global.win.show()
 	})
 
 	/**
 	 * Evento que se dispara cuando la ventana sea cerrada.
 	 */
-	win.on('closed', () => {
+	global.win.on('closed', () => {
 		/**
 		 * Eliminar el objeto 'win' de la memoria.
 		 */
-		win = null
+		global.win = null
 		
 		/**
 		 * Salir de la aplicación.
@@ -75,5 +76,5 @@ app.on('ready', () => {
 	/**
 	 * Cargar archivo local.
 	 */
-	win.loadURL(`file://${__dirname}/renderer/index.html`)
+	global.win.loadURL(`file://${__dirname}/renderer/index.html`)
 })

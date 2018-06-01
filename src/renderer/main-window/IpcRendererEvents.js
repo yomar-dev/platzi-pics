@@ -53,6 +53,11 @@ function showDialog(type, title, message){
 
 function openPreferences(){
 	const BrowserWindow = remote.BrowserWindow;
+	/**
+	 * Acceder a un objeto que ya está creado en el proceso principal.
+	 */
+	const mainWindow = remote.getGlobal('win');
+
 	const preferencesWindow = new BrowserWindow({
 		width: 400,
 		height: 300,
@@ -63,7 +68,14 @@ function openPreferences(){
 		show: false
 	});
 
-	preferencesWindow.show();
+	/**
+	 * Estamos indicando que esta ventana modal va a pertenecer a Main Window.
+	 */
+	//preferencesWindow.setParentWindow(mainWindow);
+	preferencesWindow.once('ready-to-show', () => {
+		preferencesWindow.show();
+		preferencesWindow.focus();
+	})
 	preferencesWindow.loadURL(`file://${path.join(__dirname, '..')}/preferences.html`);
 }
 
