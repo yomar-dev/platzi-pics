@@ -64,6 +64,7 @@ function openPreferences(){
 	});
 
 	preferencesWindow.show();
+	preferencesWindow.loadURL(`file://${path.join(__dirname, '..')}/preferences.html`);
 }
 
 module.exports = {
