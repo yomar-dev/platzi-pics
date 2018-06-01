@@ -2,6 +2,7 @@ import { ipcRenderer, remote } from 'electron'
 import { addImagesEvents, changeImage, selectFirstImage, clearImages, loadImages } from './images-ui'
 import { saveImage } from './filters'
 import path from 'path'
+import os from 'os'
 
 /**
  * Permite configurar todos los eventos que se van
@@ -69,9 +70,11 @@ function openPreferences(){
 	});
 
 	/**
-	 * Estamos indicando que esta ventana modal va a pertenecer a Main Window.
+	 * Verificamos que no la App no esté corriendo en SO Windows.
 	 */
-	//preferencesWindow.setParentWindow(mainWindow);
+	if(os.platform() !== 'win32'){
+		preferencesWindow.setParentWindow(mainWindow);
+	}
 	preferencesWindow.once('ready-to-show', () => {
 		preferencesWindow.show();
 		preferencesWindow.focus();
