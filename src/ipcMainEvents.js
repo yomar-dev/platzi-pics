@@ -51,7 +51,7 @@ function setMainIpc(win){
 					/**
 					 * Evento al cual lo voy a enviar 'load-images'
 					 */
-					event.sender.send('load-images', images);
+					event.sender.send('load-images', dir[0], images);
 				})
 			}
 		});
