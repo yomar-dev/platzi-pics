@@ -19,42 +19,14 @@ function setMainIpc(win){
 			properties: ['openDirectory']
 		},
 		(dir) =>{
-			let images = [];
 			if(dir){
-				/**
-				 * Leer el directorio seleccionado
-				 */
-				fs.readdir(dir[0], (err, files) => {
-					if(err) throw err
-
-					let lengthFiles = files.length;
-					for (let i = 0; i < lengthFiles; i++) {
-						if(isImage(files[i])){
-							/**
-							 * Obtener la ruta completa de la imagen.
-							 */
-							let imageFile = path.join(dir[0], files[i]);
-							/**
-							 * Obtener información del archivo
-							 */
-							let stats = fs.statSync(imageFile);
-							let size = filesize(stats.size, {round: 0});
-							images.push(
-								{
-									filename: files[i],
-									src: `file://${imageFile}`,
-									size: size
-								}
-							);
-						}
-					}
-					/**
-					 * Evento al cual lo voy a enviar 'load-images'
-					 */
-					event.sender.send('load-images', dir[0], images);
-				})
+				loadImages(event, dir[0]);
 			}
 		});
+	});
+
+	ipcMain.on('load-directory', (event, dir) => {
+		loadImages(event, dir);
 	});
 
 	ipcMain.on('open-save-dialog', (event, ext) => {
@@ -69,13 +41,48 @@ function setMainIpc(win){
 		})
 	})
 
-
 	ipcMain.on('show-dialog', (event, info) => {
 		dialog.showMessageBox(win, {
 			type: info.type,
 			title: info.title,
 			message: info.message
 		})
+	})
+}
+
+function loadImages(event, dir){
+	let images = [];
+	/**
+	 * Leer el directorio seleccionado
+	 */
+	fs.readdir(dir, (err, files) => {
+		if(err) throw err
+
+		let lengthFiles = files.length;
+		for (let i = 0; i < lengthFiles; i++) {
+			if(isImage(files[i])){
+				/**
+				 * Obtener la ruta completa de la imagen.
+				 */
+				let imageFile = path.join(dir, files[i]);
+				/**
+				 * Obtener información del archivo
+				 */
+				let stats = fs.statSync(imageFile);
+				let size = filesize(stats.size, {round: 0});
+				images.push(
+					{
+						filename: files[i],
+						src: `file://${imageFile}`,
+						size: size
+					}
+				);
+			}
+		}
+		/**
+		 * Evento al cual lo voy a enviar 'load-images'
+		 */
+		event.sender.send('load-images', dir, images);
 	})
 }
 

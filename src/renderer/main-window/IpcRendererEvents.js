@@ -10,6 +10,10 @@ import os from 'os'
  * a escuchar en el lado del proceso de renderizado.
  */
 function setIpc(){
+	if(settings.has('directory')){
+		ipcRenderer.send('load-directory', settings.get('directory'));
+	}
+
 	ipcRenderer.on('load-images', (event, dir, images) => {
 		clearImages();
 		loadImages(images);
