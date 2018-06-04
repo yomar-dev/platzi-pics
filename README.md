@@ -68,6 +68,9 @@ Instalación: `npm install --save filesize`.<br>
 **FS Extra:** Incluir módulos que no están incluidos de manera nativa por **fs**. <br>
 Instalación: `npm install --save fs.extra`.<br>
 
+**Electron Settings:** Guardar configuración del usuario. <br>
+Instalación: `npm install --save electron-settings`.<br>
+
 <br><br>
 
 [Documentación oficial de Electron](https://electronjs.org/docs) <br>
